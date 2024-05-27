@@ -1,0 +1,16 @@
+syntax="proto3";
+package foo;
+
+service FooService {
+    rpc Compute(stream Input) returns (stream Output);
+}
+
+message Input {
+    uint32 a = 1;
+    uint32 b = 2;
+}
+
+message Output {
+    Input input = 1;
+    uint32 res = 2;
+}
